@@ -1,0 +1,22 @@
+<a routerLink="/navigation-check" routerLinkActive="active">check</a>
+<h1>TinyMCE Editor</h1>
+<editor initialValue="Start Typing here..." [(ngModel)]="previousData" [init]="{
+    base_url: '/tinymce',
+    suffix: '.min',
+    height: 500,
+    menubar: false,
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table paste code help wordcount'
+    ],
+    toolbar:
+      'undo redo | formatselect | bold italic backcolor | \
+      alignleft aligncenter alignright alignjustify | \
+      bullist numlist outdent indent | removeformat | help'
+  }">
+</editor>
+<!-- <button (click)="saveChanges()">Save Changes</button> -->
+<form #form="ngForm" (ngSubmit)="saveChanges()">
+  <button type="submit">Submit</button>
+</form>
